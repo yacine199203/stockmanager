@@ -1,3 +1,4 @@
+  
 pipeline {
   agent any
   stages {
@@ -16,7 +17,7 @@ pipeline {
     
     stage ('Publication du binaire') { 
       steps { 
-        sh "curl -u admin:123456789 --upload-file target/*.war 'http://http://10.10.20.30:8081/productcatalogue/app${BUILD_NUMBER}.war'" 
+        sh "curl -u admin:123456789 --upload-file  target/productcatalogue-0.0.1-SNAPSHOT.jar 'http://10.10.20.30:8081/repository/stockmanager/app${BUILD_NUMBER}.jar' " 
  } 
  } 
   }
