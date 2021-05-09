@@ -24,7 +24,7 @@ pipeline {
           steps {
    
             sh "docker build ."
-            sh "docker tag stockmanager 19531967198819921995/productcatalogue:firsttry"
+            sh "docker tag stockmanager 19531967198819921995/stockmanager:firsttry"
             sh "docker login -u ${env.DOCKERHUB_MDP_USR} -p ${env.DOCKERHUB_MDP_PSW}"
             sh "docker push 19531967198819921995/stockmanager:firsttry"
           }
